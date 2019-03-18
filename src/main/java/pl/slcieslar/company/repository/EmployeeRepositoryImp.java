@@ -4,9 +4,7 @@ import com.google.gson.Gson;
 import pl.slcieslar.company.model.Employee;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class EmployeeRepositoryImp implements EmployeeRepository {
 
@@ -14,6 +12,9 @@ public class EmployeeRepositoryImp implements EmployeeRepository {
     private  Gson gson = new Gson();
     @Override
     public Employee create(Employee employee) {
+        Long id = Long.valueOf(employeeLixt.size()+1);;
+        employee.setId(id);
+
         employeeLixt.add(employee);
         String s = gson.toJson(employee);
         return gson.fromJson(s,Employee.class);
@@ -53,6 +54,7 @@ public class EmployeeRepositoryImp implements EmployeeRepository {
         employeeLixt.removeAll(employeeLixt);
         return employeeLixt;
     }
+
 
 
 }
