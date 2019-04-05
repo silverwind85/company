@@ -8,10 +8,10 @@ public interface EmployeeRepository  {
 
      Employee create (Employee employee);
      Employee get (Long id);
-     Employee delete (Long id );
+     void delete (Long id );
      Employee update(Employee employee);
      List<Employee> getAll();
-     List<Employee> deletAll();
+     void deletAll();
 
 
 

@@ -22,14 +22,13 @@ public class JsonPersistance<T> {
 
     public void persist(T t) throws IOException {
         writer = new FileWriter(pathJsonFile);
-        String json = new Gson().toJson(t);
-        Gson gson = new GsonBuilder().create();
+        String json = gson.toJson(t);
+
         gson.toJson(t,writer);
         writer.close();
     }
     public Employee find(Long id ) throws FileNotFoundException, UnsupportedEncodingException {
         Reader reader = new InputStreamReader(new FileInputStream(pathJsonFile),"UTF-8");
-        Gson gson = new GsonBuilder().create();
         Employee [] e = gson.fromJson(reader, Employee[].class);
         List<Employee> employeeList = Arrays.asList(e);
         return employeeList.stream().filter(emp->emp.getId().equals(id)).findAny().orElse(null);

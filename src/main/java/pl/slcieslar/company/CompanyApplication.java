@@ -15,6 +15,12 @@ public class CompanyApplication {
         EmployeeRepository employeeRepository = new EmployeeRepositoryImp();
         employeeRepository.create(employee);
         employee.setName("Mike");
+        employee.setName("Anna Kowalska");
+        employee.setId(1L);
+        Employee employee2 = new Employee();
+        employee2.setId(1L);
+        employee2.setName("Anna Kowalska-Nowak");
+        System.out.println(employee.equals(employee2));
     }
 
 }
