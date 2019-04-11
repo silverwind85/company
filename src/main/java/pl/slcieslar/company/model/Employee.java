@@ -10,6 +10,15 @@ public class Employee {
     private LocalDate created;
     private LocalDate update;
 
+    public Employee() {
+    }
+
+    public Employee(String name, LocalDate created, LocalDate update) {
+        this.name = name;
+        this.created = created;
+        this.update = update;
+    }
+
     public String getName() {
         return name;
     }

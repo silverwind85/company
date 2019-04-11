@@ -3,7 +3,7 @@ package pl.slcieslar.company.zadanie2;
 public class WalkArrayTwoDimensional<T> implements ArrayIterator {
     private T[][] array;
     private int row = 0;
-    private int col = 1;
+    private int col = 0;
 
 
     public WalkArrayTwoDimensional(T[][] array) {

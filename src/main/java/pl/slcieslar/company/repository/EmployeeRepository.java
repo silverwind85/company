@@ -2,6 +2,7 @@ package pl.slcieslar.company.repository;
 
 import pl.slcieslar.company.model.Employee;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface EmployeeRepository  {
@@ -12,6 +13,8 @@ public interface EmployeeRepository  {
      Employee update(Employee employee);
      List<Employee> getAll();
      void deletAll();
+     void saveToFile() throws IOException;
+     void  loadFromFile() throws IOException;
 
 
 
